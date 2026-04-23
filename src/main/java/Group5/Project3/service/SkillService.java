@@ -1,6 +1,6 @@
-package org.skillswap.springboot.service;
+package Group5.Project3.service;
 
-import org.skillswap.springboot.entity.Skill;
+import Group5.Project3.entity.Skill;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

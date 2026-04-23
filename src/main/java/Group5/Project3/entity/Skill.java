@@ -1,15 +1,28 @@
-package org.skillswap.springboot.entity;
+package Group5.Project3.entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "skill")
 public class Skill {
 
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "category")
     private String category;
-    private  int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "skill_id")
+    private int id;
+
     public Skill(){}
 
-    public Skill(int id, String name, String description, String category) {
-        this.id = id;
+    public Skill(String name, String description, String category) {
         this.name = name;
         this.description = description;
         this.category = category;
@@ -35,8 +48,4 @@ public class Skill {
     public int getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
-    }
-
 }
