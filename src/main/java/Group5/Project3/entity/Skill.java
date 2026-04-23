@@ -1,4 +1,4 @@
-package org.skillswap.springboot.entity;
+package Group5.Project3.entity;
 
 public class Skill {
 

@@ -1,7 +1,7 @@
-package org.skillswap.springboot.controller;
+package Group5.Project3.controller;
 
-import org.skillswap.springboot.entity.Skill;
-import org.skillswap.springboot.service.SkillService;
+import Group5.Project3.entity.Skill;
+import Group5.Project3.service.SkillService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
