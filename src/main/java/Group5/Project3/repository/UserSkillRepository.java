@@ -4,6 +4,8 @@ import Group5.Project3.entity.UserSkill;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * User Skill Repository
  *
@@ -14,4 +16,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserSkillRepository extends JpaRepository<UserSkill, Long> {
+    List<UserSkill> findByUserId(Long userId);
+    List<UserSkill> findByUserIdAndOffered(Long userId, Boolean offered);
 }
