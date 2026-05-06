@@ -2,7 +2,6 @@ package Group5.Project3.controller;
 
 import Group5.Project3.entity.User;
 import Group5.Project3.service.UserService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,25 +30,23 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Long id) {
-        return userService.getUserById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public User getUserById(@PathVariable Long id) {
+        return userService.getUserById((long) id).orElse(null);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
-        return ResponseEntity.ok(userService.updateUser(id, user));
+    public User updateUser(@PathVariable Long id, @RequestBody User user) {
+        return userService.updateUser((long) id, user);
     }
 
     @PatchMapping("/{id}/bio")
-    public ResponseEntity<User> updateBio(@PathVariable Long id, @RequestBody String bio) {
-        return ResponseEntity.ok(userService.updateUserBio(id, bio));
+    public User updateBio(@PathVariable Long id, @RequestBody String bio) {
+        return userService.updateUserBio((long) id, bio);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        userService.deleteUser(id);
-        return ResponseEntity.noContent().build();
+    public boolean deleteUser(@PathVariable int id) {
+        userService.deleteUser((long) id);
+        return true;
     }
 }
