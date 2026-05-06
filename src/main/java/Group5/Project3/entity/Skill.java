@@ -18,7 +18,7 @@ public class Skill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "skill_id")
-    private int id;
+    private long id;
 
     public Skill(){}
 
@@ -45,7 +45,7 @@ public class Skill {
     public void setCategory(String category) {
         this.category = category;
     }
-    public int getId() {
+    public long getId() {
         return id;
     }
 }
