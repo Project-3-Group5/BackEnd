@@ -19,13 +19,13 @@ public class User {
     @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "username", nullable = false)
+    @Column(name = "username")
     private String username;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password")
     private String password;
 
-    @Column(name = "is_admin", nullable = false)
+    @Column(name = "is_admin")
     private Boolean isAdmin;
 
     @Column(name = "bio")

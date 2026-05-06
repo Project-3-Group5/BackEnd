@@ -19,23 +19,21 @@ public class UserSkill {
     @Column(name = "id")
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @Column(name = "user_id")
+    private Long user_id;
 
-    @ManyToOne
-    @JoinColumn(name = "skill_id", nullable = false)
-    private Skill skill;
+    @Column(name = "skill_id")
+    private Long skill_id;
 
-    @Column(name = "offered", nullable = false)
+    @Column(name = "offered")
     private Boolean offered;
 
     public UserSkill() {
     }
 
-    public UserSkill(User user, Skill skill, Boolean offered) {
-        this.user = user;
-        this.skill = skill;
+    public UserSkill(Long userId, Long skillId, Boolean offered) {
+        this.user_id = userId;
+        this.skill_id = skillId;
         this.offered = offered;
     }
 
@@ -43,20 +41,20 @@ public class UserSkill {
         return id;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserId() {
+        return user_id;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.user_id = userId;
     }
 
-    public Skill getSkill() {
-        return skill;
+    public Long getSkillId() {
+        return skill_id;
     }
 
-    public void setSkill(Skill skill) {
-        this.skill = skill;
+    public void setSkillId(Long skillId) {
+        this.skill_id = skillId;
     }
 
     public Boolean getOffered() {

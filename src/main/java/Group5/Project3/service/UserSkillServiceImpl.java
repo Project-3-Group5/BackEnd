@@ -45,10 +45,7 @@ public class UserSkillServiceImpl implements UserSkillService{
     }
 
     public UserSkill addSkillToUser(Long userId, Long skillId, Boolean offered) {
-        User user = userRepository.findById(userId).orElseThrow();
-        Skill skill = skillRepository.findById(skillId).orElseThrow();
-
-        UserSkill userSkill = new UserSkill(user, skill, offered);
+        UserSkill userSkill = new UserSkill(userId, skillId, offered);
         return userSkillRepository.save(userSkill);
     }
 }
